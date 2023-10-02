@@ -1,9 +1,16 @@
 
+x = 42
+if x % 2 == 0: # jeżeli reszta z dzielenia X przez 2 wyniesie 0, liczba jest parzysta
+    print("This number is even")
+else:
+    print("This number is odd")
+
+
 weight = float(input("Input your weight: "))
 height = float(input("Input your height: "))
 
 bmi = weight / height ** 2
-print(f"BMI: {bmi:.2f}")
+print(f"BMI: {bmi:.2f}") # f str ing , w nawiasie klamrowy dajemy zmienna, .2f oznacza float i 2 znaki po przecinku
 
 if bmi < 18.4:
     print("Underweight")
