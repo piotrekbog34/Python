@@ -57,6 +57,70 @@ def second(size, **kwargs):
 
 
 
+def cost_delivery(quantity, *args, discount=0):
+    delivery_cost = 5
+
+    if quantity > 1:
+        delivery_cost += (quantity - 1) * 2
+
+    if 0 <= discount <= 1:
+        delivery_cost *= (1 - discount)
+
+    return delivery_cost
+
+
+
+def cost_delivery(quantity, *_, discount=0):
+    """Funkcja zwraca całkowitą kwotę dostawy.
+
+    Pierwszym parametrem jest liczba pozycji w zamówieniu. 
+    Parametr rabatu discount, przesyłany tylko za pomocą klucza, domyślnie ma 
+    wartość 0."""
+   
+    result = (5 + 2 * (quantity - 1)) * (1 - discount)
+    return result
+
+
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n + 1):
+            result *= i
+        return result
+
+def number_of_groups(n, k):
+    if n < k:
+        return 0
+
+    n_factorial = factorial(n)
+    nk_factorial = factorial(n - k)
+    k_factorial = factorial(k)
+
+    wynik = n_factorial // (nk_factorial * k_factorial)
+    return wynik
+
+
+
+def fibonacci(n):
+    if n == 0 or n == 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n -2)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
