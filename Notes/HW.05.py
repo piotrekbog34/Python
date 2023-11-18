@@ -244,3 +244,20 @@ def find_word(text, word):
     result['string'] = text
     
     return result
+
+
+def find_word(input_string, search_word):
+    result = {}
+    result['search_string'] = search_word
+    result['string'] = input_string
+
+    if search_word in input_string:
+        result['result'] = True
+        result['first_index'] = input_string.find(search_word)
+        result['last_index'] = result['first_index'] + len(search_word) - 1
+    else:
+        result['result'] = False
+        result['first_index'] = None
+        result['last_index'] = None
+
+    return result
